@@ -36,6 +36,7 @@ export default ({ command }: ConfigEnv) => {
             }
         })
     } else if (target === 'lib') {
+        console.log('Building library')
         return defineConfig({
             build: {
                 outDir: 'dist',
@@ -52,7 +53,7 @@ export default ({ command }: ConfigEnv) => {
             },
             plugins: [
                 dts({
-                    rollupTypes: true,
+                    rollupTypes: false,
                     copyDtsFiles: true
                 }),
             ],
