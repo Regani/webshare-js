@@ -24,21 +24,19 @@ shareButton?.addEventListener(
             ]
         }
 
-        const title = additionalDataTitleElement?.textContent
-        const text = additionalDataTextElement?.textContent
-        const url = additionalDataUrlElement?.textContent
-
-        if (title) {
-            shareData.title = title
+        if (additionalDataTitleElement instanceof HTMLInputElement) {
+            shareData.title = additionalDataTitleElement.value
         }
 
-        if (text) {
-            shareData.text = text
+        if (additionalDataTextElement instanceof HTMLInputElement) {
+            shareData.text = additionalDataTextElement.value
         }
 
-        if (url) {
-            shareData.url = url
+        if (additionalDataUrlElement instanceof HTMLInputElement) {
+            shareData.url = additionalDataUrlElement.value
         }
+
+        console.log('Sharing data:', shareData)
 
         await webshare.share(shareData)
     }
