@@ -1,9 +1,9 @@
-import ShareableJS from '@/Shareable'
+import WebShareJS from '@/WebShare'
 
 if (typeof window !== 'undefined') {
-    window.ShareableJS = ShareableJS
+    window.WebShareJS = WebShareJS
 }
 
 export type * from '@/types'
 
-export default ShareableJS
+export default WebShareJS

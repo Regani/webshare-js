@@ -1,4 +1,4 @@
-import ShareableJS from '@/Shareable'
+import WebShareJS from '@/WebShare'
 import type { Options } from 'html-to-image/lib/types'
 
 export interface ShareData {
@@ -24,6 +24,6 @@ export interface ShareQueryData extends Omit<ShareData, 'files'> {
 
 declare global {
     interface Window {
-        ShareableJS: typeof ShareableJS
+        WebShareJS: typeof WebShareJS
     }
 }

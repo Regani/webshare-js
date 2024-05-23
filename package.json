@@ -1,11 +1,11 @@
 {
-  "name": "shareable-js",
+  "name": "webshare-js",
   "version": "1.0.0",
-  "description": "Generate shareable content for mobile",
-  "main": "dist/shareable.cjs.js",
-  "jsdelivr": "dist/shareable.umd.js",
-  "module": "dist/shareable.es.js",
-  "unpkg": "dist/shareable.umd.js",
+  "description": "Generate webshare content for mobile",
+  "main": "dist/webshare.cjs.js",
+  "jsdelivr": "dist/webshare.umd.js",
+  "module": "dist/webshare.es.js",
+  "unpkg": "dist/webshare.umd.js",
   "types": "dist/types.d.ts",
   "scripts": {
     "dev": "vite --host",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Regani/shareable-js.git"
+    "url": "git+https://github.com/Regani/webshare-js.git"
   },
   "precommit": "ts-check, lint",
   "engines": {
@@ -28,9 +28,9 @@
   "author": "Bohdan Konechnyi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Regani/shareable-js/issues"
+    "url": "https://github.com/Regani/webshare-js/issues"
   },
-  "homepage": "https://github.com/Regani/shareable-js#readme",
+  "homepage": "https://github.com/Regani/webshare-js#readme",
   "devDependencies": {
     "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "6.20.0",

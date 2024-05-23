@@ -47,8 +47,8 @@ export default ({ command }: ConfigEnv) => {
                 lib: {
                     entry: resolve(__dirname, 'src/index.ts'),
                     formats: [ 'es', 'cjs', 'umd', 'iife' ],
-                    name: 'ShareableJS',
-                    fileName: (format: string) => `shareable.${format}.js`,
+                    name: 'WebShareJS',
+                    fileName: (format: string) => `webshare.${format}.js`,
                 },
             },
             plugins: [

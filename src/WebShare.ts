@@ -4,16 +4,16 @@ import Logger from '@/Logger'
 
 import { ShareQueryData, ShareData, ShareQueryFileData } from '@/types'
 
-interface ShareableOptions {
+interface WebShareOptions {
     silent?: boolean
 }
 
-export default class ShareableJS {
+export default class WebShareJS {
     private readonly _logger
 
-    constructor (options?: ShareableOptions) {
+    constructor (options?: WebShareOptions) {
         this._logger = new Logger(
-            'ShareableJS',
+            'WebShareJS',
             options?.silent
         )
     }

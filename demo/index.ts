@@ -1,6 +1,6 @@
-import ShareableJS, { ShareQueryData } from '../src'
+import WebShareJS, { ShareQueryData } from '../src'
 
-const shareable = new ShareableJS({
+const webshare = new WebShareJS({
     silent: false
 })
 
@@ -40,6 +40,6 @@ shareButton?.addEventListener(
             shareData.url = url
         }
 
-        await shareable.share(shareData)
+        await webshare.share(shareData)
     }
 )

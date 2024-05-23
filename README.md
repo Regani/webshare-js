@@ -1,6 +1,6 @@
-# ShareableJS
+# WebShareJS
 
-Generate shareable content for mobile applications with ease using ShareableJS.
+Generate webshare content for mobile applications with ease using WebShareJS.
 
 ## Table of Contents
 
@@ -11,14 +11,14 @@ Generate shareable content for mobile applications with ease using ShareableJS.
   - [HTML](#html)
   - [JavaScript](#javascript)
 - [API](#api)
-  - [ShareableJS](#shareablejs)
+  - [WebShareJS](#websharejs)
   - [Methods](#methods)
   - [Types](#types)
 - [License](#license)
 
 ## Introduction
 
-ShareableJS is a JavaScript library designed to simplify the process of sharing content from web applications 
+WebShareJS is a JavaScript library designed to simplify the process of sharing content from web applications 
 to mobile devices. It supports generating images from HTML content and sharing text, URLs, 
 and files using the native sharing capabilities of mobile browsers.
 
@@ -30,17 +30,17 @@ and files using the native sharing capabilities of mobile browsers.
 
 ## Installation
 
-Install ShareableJS using npm:
+Install WebShareJS using npm:
 
 With npm:
 ```sh
-npm install shareable-js
+npm install webshare-js
 ```
 
 Or include the script in your HTML file:
 
 ```html
-<script src="https://shareable-js-cdn.pages.dev/shareable.umd.js"></script>
+<script src="https://webshare-js-cdn.pages.dev/webshare.umd.js"></script>
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ Or include the script in your HTML file:
 Add the following HTML elements to your page:
 
 ```html
-<div id="shareable">
+<div id="webshare">
     <p>Hello, World!</p>
 </div>
 ```
@@ -57,23 +57,23 @@ Add the following HTML elements to your page:
 ### JavaScript
 With ES6 modules:
 ```typescript
-import ShareableJS, { ShareQueryData } from 'shareable-js'
+import WebShareJS, { ShareQueryData } from 'webshare-js'
 
-const shareable = new ShareableJS()
+const webshare = new WebShareJS()
 
 const shareData: ShareQueryData = {
     files: [
         {
-            query: '#shareable',
+            query: '#webshare',
             title: 'Generated content'
         }
     ],
-    title: 'ShareableJS',
-    text: 'Generate shareable content with ease',
+    title: 'WebShareJS',
+    text: 'Generate webshare content with ease',
     url: 'https://example.com'
 }
 
-shareable.share(shareData)
+webshare.share(shareData)
     .then(() => {
         console.log('Content shared successfully')
     })
@@ -84,21 +84,21 @@ shareable.share(shareData)
 
 With a script tag:
 ```javascript
-const shareable = new window.ShareableJS()
+const webshare = new window.WebShareJS()
 
 const shareData = {
     files: [
         {
-            query: '#shareable',
+            query: '#webshare',
             title: 'Generated content'
         }
     ],
-    title: 'ShareableJS',
-    text: 'Generate shareable content with ease',
+    title: 'WebShareJS',
+    text: 'Generate webshare content with ease',
     url: 'https://example.com'
 }
 
-shareable.share(shareData)
+webshare.share(shareData)
     .then(() => {
         console.log('Content shared successfully')
     })
@@ -109,14 +109,14 @@ shareable.share(shareData)
 
 ## API
 
-### ShareableJS
+### WebShareJS
 ```javascript
-import ShareableJS from 'shareable-js'
+import WebShareJS from 'webshare-js'
 ```
 
 **Constructor**
 ```typescript
-new ShareableJS(options?: ShareableOptions)
+new WebShareJS(options?: WebShareOptions)
 ```
 
 **Options**
