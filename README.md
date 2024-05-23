@@ -40,7 +40,7 @@ npm install shareable-js
 Or include the script in your HTML file:
 
 ```html
-<script src="https://unpkg.com/shareable-js/dist/shareable.min.js"></script>
+<script src="https://shareable-js-cdn.pages.dev/shareable.umd.js"></script>
 ```
 
 ## Usage
