@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShareableJS Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.scss" />
+</head>
+<body>
+<div class="demo">
+    <div id="generateContent">
+        <div class="question">
+            <h1>What is the meaning of life?</h1>
+        </div>
+        <div class="answer">
+            <p>Drink beer</p>
+        </div>
+    </div>
+
+    <div id="shareAdditionalData">
+        <label>
+            Title
+            <input id="title">
+        </label>
+        <label>
+            Text
+            <input id="text">
+        </label>
+        <label>
+            Url
+            <input id="url">
+        </label>
+    </div>
+
+    <button id="shareButton">
+        Share
+    </button>
+</div>
+
+<script src="./index.ts" type="module"></script>
+</body>
+</html>

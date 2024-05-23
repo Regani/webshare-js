@@ -1,0 +1,49 @@
+{
+  "name": "shareable-js",
+  "version": "1.0.0",
+  "description": "Generate shareable content for mobile",
+  "main": "dist/shearable.cjs.js",
+  "jsdelivr": "dist/shearable.umd.js",
+  "module": "dist/shearable.es.js",
+  "unpkg": "dist/shearable.umd.js",
+  "types": "dist/shearable.d.ts",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "ts-check": "tsc --noEmit",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Regani/shearable-js.git"
+  },
+  "precommit": "ts-check, lint",
+  "engines": {
+    "node": ">= 18"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Bohdan Konechnyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Regani/shearable-js/issues"
+  },
+  "homepage": "https://github.com/Regani/shearable-js#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "6.20.0",
+    "@typescript-eslint/parser": "6.20.0",
+    "eslint": "^8.57.0",
+    "eslint-config-regani-ts": "^1.0.16",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.77.1",
+    "typescript": "~5.4.0",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "3.7.2",
+    "vite-plugin-mkcert": "^1.17.5"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.11"
+  }
+}
