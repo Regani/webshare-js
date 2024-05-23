@@ -3,43 +3,65 @@ import { defineConfig, ConfigEnv } from 'vite'
 import dts from 'vite-plugin-dts'
 import mkcert from 'vite-plugin-mkcert'
 
+// 'lib' | 'demo'
+const target = process.env.TARGET ?? 'lib'
+
 export default ({ command }: ConfigEnv) => {
     const isDevelopment = command === 'serve'
 
-    return defineConfig({
-        // Change the root only if we're in development mode
-        root: isDevelopment
-            ? resolve(__dirname, 'demo')
-            : __dirname,
-        build: {
-            rollupOptions: {
-                output: {
-                    exports: 'named',
+    if (isDevelopment) {
+        return defineConfig({
+            root: resolve(__dirname, 'demo'),
+            base: '',
+            resolve: {
+                alias: {
+                    '@': resolve(__dirname, './src'),
+                }
+            },
+            plugins: [
+                mkcert()
+            ]
+        })
+    } else if (target === 'demo') {
+        return defineConfig({
+            plugins: [],
+            resolve: {
+                alias: {
+                    '@': resolve(__dirname, './src'),
+                }
+            },
+            root: resolve(__dirname, './demo'),
+            build: {
+                outDir: resolve(__dirname, './dist'),
+            }
+        })
+    } else if (target === 'lib') {
+        return defineConfig({
+            build: {
+                outDir: 'dist',
+                sourcemap: false,
+                commonjsOptions: {
+                    esmExternals: true
+                },
+                lib: {
+                    entry: resolve(__dirname, 'src/index.ts'),
+                    formats: [ 'es', 'cjs', 'umd', 'iife' ],
+                    name: 'ShareableJS',
+                    fileName: (format: string) => `shareable.${format}.js`,
                 },
             },
-            outDir: 'dist',
-            sourcemap: true,
-            commonjsOptions: {
-                esmExternals: true,
+            plugins: [
+                dts({
+                    rollupTypes: true,
+                    copyDtsFiles: true
+                }),
+            ],
+            resolve: {
+                alias: {
+                    '@': resolve(__dirname, './src'),
+                }
             },
-            lib: {
-                entry: resolve(__dirname, 'src/index.ts'),
-                formats: [ 'es', 'cjs', 'umd', 'iife' ],
-                name: 'ShareableJS',
-                fileName: (format) => `shareable.${format}.js`,
-            },
-        },
-        plugins: [
-            mkcert(),
-            dts({
-                copyDtsFiles: true,
-                rollupTypes: true,
-            })
-        ],
-        resolve: {
-            alias: {
-                '@': resolve(__dirname, './src'),
-            },
-        },
-    })
+            base: './',
+        })
+    }
 }

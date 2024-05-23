@@ -9,7 +9,8 @@
   "types": "dist/shearable.d.ts",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "cross-env TARGET=lib vite build",
+    "build-demo": "cross-env TARGET=demo vite build",
     "ts-check": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore"
   },
@@ -35,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "6.20.0",
     "@typescript-eslint/parser": "6.20.0",
     "eslint": "^8.57.0",
+    "cross-env": "^7.0.3",
     "eslint-config-regani-ts": "^1.0.16",
     "pre-commit": "^1.2.2",
     "sass": "^1.77.1",
