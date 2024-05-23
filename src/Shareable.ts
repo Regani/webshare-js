@@ -4,14 +4,14 @@ import Logger from '@/Logger'
 
 import { ShareQueryData, ShareData, ShareQueryFileData } from '@/types'
 
-interface Options {
+interface ShareableOptions {
     silent?: boolean
 }
 
 export default class ShareableJS {
     private readonly _logger
 
-    constructor (options?: Options) {
+    constructor (options?: ShareableOptions) {
         this._logger = new Logger(
             'ShareableJS',
             options?.silent
@@ -53,9 +53,7 @@ export default class ShareableJS {
 
         const dataUrl = await toPng(
             element,
-            {
-                backgroundColor: 'red'
-            }
+            file.imageOptions
         )
 
         const response = await fetch(dataUrl)

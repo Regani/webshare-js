@@ -2,11 +2,11 @@
   "name": "shareable-js",
   "version": "1.0.0",
   "description": "Generate shareable content for mobile",
-  "main": "dist/shearable.cjs.js",
-  "jsdelivr": "dist/shearable.umd.js",
-  "module": "dist/shearable.es.js",
-  "unpkg": "dist/shearable.umd.js",
-  "types": "dist/shearable.d.ts",
+  "main": "dist/shareable.cjs.js",
+  "jsdelivr": "dist/shareable.umd.js",
+  "module": "dist/shareable.es.js",
+  "unpkg": "dist/shareable.umd.js",
+  "types": "dist/shareable.d.ts",
   "scripts": {
     "dev": "vite --host",
     "build": "cross-env TARGET=lib vite build",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Regani/shearable-js.git"
+    "url": "git+https://github.com/Regani/shareable-js.git"
   },
   "precommit": "ts-check, lint",
   "engines": {
@@ -28,9 +28,9 @@
   "author": "Bohdan Konechnyi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Regani/shearable-js/issues"
+    "url": "https://github.com/Regani/shareable-js/issues"
   },
-  "homepage": "https://github.com/Regani/shearable-js#readme",
+  "homepage": "https://github.com/Regani/shareable-js#readme",
   "devDependencies": {
     "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "6.20.0",

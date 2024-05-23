@@ -1,4 +1,5 @@
 import ShareableJS from '@/Shareable'
+import type { Options } from 'html-to-image/lib/types'
 
 export interface ShareData {
     files: File[]
@@ -12,6 +13,9 @@ export interface ShareQueryFileData {
     title: string
     /* To use as querySelector to generate the picture by */
     query: string
+
+    /* Options for the image from html-to-image library */
+    imageOptions?: Options
 }
 
 export interface ShareQueryData extends Omit<ShareData, 'files'> {
