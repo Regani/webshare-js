@@ -1,12 +1,12 @@
 {
   "name": "webshare-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate webshare content for mobile",
   "main": "dist/webshare.cjs.js",
   "jsdelivr": "dist/webshare.umd.js",
   "module": "dist/webshare.es.js",
   "unpkg": "dist/webshare.umd.js",
-  "types": "dist/types.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite --host",
     "build": "cross-env TARGET=lib vite build",

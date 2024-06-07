@@ -52,10 +52,7 @@ export default ({ command }: ConfigEnv) => {
                 },
             },
             plugins: [
-                dts({
-                    rollupTypes: false,
-                    copyDtsFiles: true
-                }),
+                dts(),
             ],
             resolve: {
                 alias: {
