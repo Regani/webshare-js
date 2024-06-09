@@ -130,7 +130,7 @@ class WebShareJS {
 
         this._logger.log('Sharing data:', shareData)
 
-        navigator.share(shareData)
+        return navigator.share(shareData)
             .then(() => {
                 this._logger.log('Data shared')
             })

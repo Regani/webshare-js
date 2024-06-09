@@ -1,6 +1,6 @@
 {
   "name": "webshare-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate webshare content for mobile",
   "main": "dist/webshare.cjs.js",
   "jsdelivr": "dist/webshare.umd.js",
