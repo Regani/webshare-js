@@ -1,6 +1,25 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url(font/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font/Pacifico-Regular.ttf);
+}
+
 body {
-    font-family: 'Playfair Display', serif;
-    background-color: #f4f4f9;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,81 +27,81 @@ body {
     align-items: center;
     height: 100vh;
 }
-
 .demo {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
     max-width: 400px;
     width: 100%;
     text-align: center;
 }
-
 #generateContent {
-    background: linear-gradient(135deg, #f8f0e3, #e8dacd);
-    border: 2px solid #d4a373;
+    background: linear-gradient(135deg, #ffe8e8, #ffdcdc);
+    border: 2px solid #ffa7a7;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
-
 #generateContent .question h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    color: #6b4226;
-    margin-bottom: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #ff6b6b;
+    margin-bottom: 15px;
 }
-
 #generateContent .answer p {
-    font-family: 'Cinzel', serif;
-    font-size: 22px;
-    color: #85603f;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff8787;
 }
-
 #shareAdditionalData {
-    margin-top: 20px;
-}
+    margin-top: 30px;
 
-#shareAdditionalData label {
-    display: block;
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-}
-
-#shareAdditionalData input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-button#shareButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-button#shareButton:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 500px) {
-    .demo {
-        padding: 15px;
+    label {
+        display: block;
+        margin-bottom: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
     }
 
+    input {
+        width: calc(100% - 30px);
+        padding: 15px;
+        border: 2px solid #ffa7a7;
+        border-radius: 10px;
+        margin-top: 8px;
+        font-size: 18px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+            background-color: #ff4f4f;
+            transform: scale(1.05);
+        }
+    }
+}
+@media (max-width: 500px) {
+    .demo {
+        padding: 20px;
+    }
     #shareAdditionalData input {
-        width: calc(100% - 10px);
+        width: calc(100% - 20px);
     }
 }

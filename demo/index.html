@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>WebShareJS Demo</title>
-    <link rel="stylesheet" type="text/css" href="style.scss" />
+    <link rel="stylesheet" type="text/css" href="style.scss"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <div class="demo">
+    <img src="" alt="" id="imageToHaveData">
+
     <div id="generateContent">
+        <img style="height: 50px;" src="/star.svg" alt="">
+
+
         <div class="question">
             <h1>What is the meaning of life?</h1>
         </div>
@@ -15,8 +22,7 @@
             <p>Drink beer</p>
         </div>
     </div>
-
-    <div id="shareAdditionalData">
+    <form id="shareAdditionalData">
         <label>
             Title
             <input id="title">
@@ -27,15 +33,18 @@
         </label>
         <label>
             Url
-            <input id="url">
+            <input id="url" type="url">
         </label>
-    </div>
 
-    <button id="shareButton">
-        Share
+        <button type="submit">
+            Share
+        </button>
+    </form>
+
+    <button id="test">
+        Test
     </button>
 </div>
-
 <script src="./index.ts" type="module"></script>
 </body>
 </html>

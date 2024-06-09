@@ -1,20 +1,60 @@
 import WebShareJS, { ShareQueryData } from '../src'
 
+
+import { toPng } from 'html-to-image'
+
+const testButtonEl = document.getElementById('test')
+const generateContentEl = document.querySelector('#generateContent')
+const imageEl = document.getElementById('imageToHaveData')
+console.log('generateContentEl', generateContentEl)
+if (generateContentEl instanceof HTMLElement) {
+    testButtonEl?.addEventListener(
+        'click',
+        async () => {
+            console.log('on click')
+            const dataUrl = await toPng(
+                generateContentEl,
+                {}
+            )
+
+            console.log('Data URL:', dataUrl)
+
+            const response = await fetch(dataUrl)
+            const blob = await response.blob()
+            console.log('Blob:', blob)
+            const file = new File(
+                [ blob ],
+                'prikol.png',
+                {
+                    type: 'image/png',
+                    lastModified: new Date().getTime()
+                }
+            )
+
+            console.log('File:', file)
+
+            imageEl?.setAttribute('src', URL.createObjectURL(file))
+        }
+    )
+}
+
 const webshare = new WebShareJS({
-    silent: false
+    silent: true
 })
 
 const generateContentSelector = '#generateContent'
-const shareAdditionalDataSelector = '#shareAdditionalData'
+const shareAdditionalDataFormSelector = '#shareAdditionalData'
 
-const shareButton = document.getElementById('shareButton')
-const additionalDataTitleElement = document.querySelector(shareAdditionalDataSelector + ' #title')
-const additionalDataTextElement = document.querySelector(shareAdditionalDataSelector + ' #text')
-const additionalDataUrlElement = document.querySelector(shareAdditionalDataSelector + ' #url')
+const shareAdditionalDataFormElement = document.querySelector(shareAdditionalDataFormSelector)
+const additionalDataTitleElement = document.querySelector(shareAdditionalDataFormSelector + ' #title')
+const additionalDataTextElement = document.querySelector(shareAdditionalDataFormSelector + ' #text')
+const additionalDataUrlElement = document.querySelector(shareAdditionalDataFormSelector + ' #url')
 
-shareButton?.addEventListener(
-    'click',
-    async () => {
+shareAdditionalDataFormElement?.addEventListener(
+    'submit',
+    async (e) => {
+        e.preventDefault()
+
         const shareData: ShareQueryData = {
             files: [
                 {
@@ -24,15 +64,15 @@ shareButton?.addEventListener(
             ]
         }
 
-        if (additionalDataTitleElement instanceof HTMLInputElement) {
+        if (additionalDataTitleElement instanceof HTMLInputElement && additionalDataTitleElement.value) {
             shareData.title = additionalDataTitleElement.value
         }
 
-        if (additionalDataTextElement instanceof HTMLInputElement) {
+        if (additionalDataTextElement instanceof HTMLInputElement && additionalDataTextElement.value) {
             shareData.text = additionalDataTextElement.value
         }
 
-        if (additionalDataUrlElement instanceof HTMLInputElement) {
+        if (additionalDataUrlElement instanceof HTMLInputElement && additionalDataUrlElement.value) {
             shareData.url = additionalDataUrlElement.value
         }
 
@@ -41,3 +81,42 @@ shareButton?.addEventListener(
         await webshare.share(shareData)
     }
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
